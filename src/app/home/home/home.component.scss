@@ -1,0 +1,39 @@
+img{
+    width: 30px;
+}
+
+#encabezado {
+    margin: 40px auto;
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    background-size: cover;
+}
+
+#encabezado img{
+    width: 80%;
+    height: 300px;
+    opacity: 0.5;
+    position: relative;
+    border-radius: 50px;
+    margin: 10px auto;
+
+}
+
+#encabezado h1{
+    font-size: 50px;
+    position: absolute;
+    margin: 100px auto;
+    width: 100%;
+    display: flex;
+    text-shadow: 3px 3px 3px rgba(59, 59, 59, 0.6);
+    justify-content:center
+    
+}
+
+.card{
+    margin: 100px auto;
+    width: 80%;
+    justify-content: center;
+}

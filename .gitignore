@@ -40,3 +40,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+tsconfig.app.json
+tsconfig.spec.json
+.editorconfig
+package-lock-json
