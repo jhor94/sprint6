@@ -1,5 +1,10 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+tsconfig.app.json
+tsconfig.spec.json
+.editorconfig
+.package-lock-json
+
 # Compiled output
 /dist
 /tmp
@@ -40,7 +45,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-tsconfig.app.json
-tsconfig.spec.json
-.editorconfig
-package-lock-json
+
