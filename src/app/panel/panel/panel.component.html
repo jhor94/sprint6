@@ -1,1 +1,14 @@
-<p>panel works!</p>
+<form class="formulario" (ngSubmit) ="agregarPaginas()" [formGroup]="formularioReactivo1">
+    <div>
+        <label class="form-label"> Número de páginas</label>
+        <input type="text"  formControlName="nomPaginas" required>
+    </div>
+    
+    <div>
+        <label class="form-label" > Número de lenguajes</label>
+        <input type="text" formControlName="nomLenguajes" required>
+    </div>
+    <button type="submit"> + </button>
+    <button type="submit"> - </button>
+
+</form>

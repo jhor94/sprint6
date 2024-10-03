@@ -1,34 +1,93 @@
 <div>
-<nav class="navbar bg-body-tertiary">
+  <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
+      <div class="col">
         <div class="col">
-            <div class="col">
-                <img src="assets/usuarios-alt.svg" class ="img-fluid float-start" alt="">
-            </div>
-            <div class="col">
-                | <a class="navbar-brand" href="#"> Frontender.itacademy </a>
-            </div>
+          <img src="assets/usuarios-alt.svg" class="img-fluid float-start" alt="">
         </div>
+        <div class="col">
+          | <a class="navbar-brand" href="#"> Frontender.itacademy </a>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <div  id="encabezado" class="container-fluid text-center">
+  <div id="encabezado" class="container-fluid text-center">
     <div class="row justify-content-center">
-        <img src="assets/vecteezy_business-accounting-concept-businessman-uses-calculator-with_50267889.jpg" class="img-fluid"  alt="">
-        <h1 class="text-center ">Aconsegueix la millor qualitat</h1>
+      <img src="assets/vecteezy_business-accounting-concept-businessman-uses-calculator-with_50267889.jpg"
+        class="img-fluid" alt="">
+      <h1 class="text-center ">{{title}}</h1>
     </div>
   </div>
 </div>
 
-<div>
+
+  <form [formGroup]="formularioEjemplo" action="">
+    <!--SEO-->
     <div class="card">
-        <div class="card-header">
-          Featured
+      <div class=" row card-body">
+        <div class="col-6">
+          <h2>SEO</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-        </ul>
+        <div id="price" class="col-3">
+          <p> 300 €</p>
+        </div>
+        <div class="col-3">
+            <label for="opcion1">
+              <input type="checkbox"  formControlName="seo" id="opcion1">
+              Afegir
+            </label>
+        </div>
       </div>
-</div>
+    </div>
+
+
+
+
+    <!--Ads-->
+    <div class="card">
+      <div class="row card-body">
+        <div class="col-6">
+          <h2>ADS</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+        <div id="price" class="col-3">
+          <p> 300 €</p>
+        </div>
+        <div class="col-3">
+            <label for="opcion2">
+              <input type="checkbox"  formControlName="ads"  id="opcion2">
+              Afegir
+            </label>
+        </div>
+      </div>
+    </div>
+
+    <!--Web-->
+
+    <div class="card">
+      <div class="row card-body">
+        <div class="col-6">
+          <h2>Web</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+        <div id="price" class="col-3">
+          <p> 500 €</p>
+        </div>
+        <div class="col-3">
+            <label for="opcion3">
+              <input type="checkbox" formControlName="web" id="opcion3">
+              Afegir
+              <app-panel></app-panel>
+            </label>
+        </div>
+      </div>
+    </div>
+
+    <h1 id="totalPresupuesto" class="bolder">Total coste: {{totalCoste}} €</h1>
+  </form>
+  
+    
+
+

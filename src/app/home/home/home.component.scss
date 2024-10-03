@@ -22,7 +22,7 @@ img{
 }
 
 #encabezado h1{
-    font-size: 50px;
+    font-size: 80px;
     position: absolute;
     margin: 100px auto;
     width: 100%;
@@ -32,8 +32,27 @@ img{
     
 }
 
+.card-body {
+    font-size: 20px;
+}
+
+#price{
+    font-weight: bold;
+    font-size: 40px;
+}
+
 .card{
     margin: 100px auto;
-    width: 80%;
+    width: 60%;
     justify-content: center;
+    box-shadow:  4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+#totalPresupuesto{
+    font-size: 60px;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    text-align: right;
+    margin-right: 500px;
+    font-weight: bold;
 }
