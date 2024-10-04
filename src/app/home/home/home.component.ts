@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit{
       this.totalCoste = 0;
       if (values.seo) this.totalCoste += 300;
       if (values.ads) this.totalCoste += 400;
-      if (values.web) this.totalCoste += 500;
+      if (values.web) this.totalCoste += 500 ;
     });
     
   }

@@ -1,9 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
+import { Budget } from '../interfaces/budget';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BudgetService {
 
-  constructor() { }
+  calculoBugdetWeb(numPagina:number, numIdioma:number):number{
+    return numPagina * numIdioma * 30
+  }  
+
+  constructor() { 
+ 
+  }
 }

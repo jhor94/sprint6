@@ -1,14 +1,38 @@
-<form class="formulario" (ngSubmit) ="agregarPaginas()" [formGroup]="formularioReactivo1">
-    <div>
-        <label class="form-label"> Número de páginas</label>
-        <input type="text"  formControlName="nomPaginas" required>
+<form class="formulario" (ngSubmit) ="calcularPresupuestoPaginas()" [formGroup]="formularioReactivo1">
+
+    <div class="row ">
+        <div class="col d-flex">
+        <label class="form-label" > Número de páginas</label>
+        </div>
+        <div class="col d-flex justify-content-start">
+            <button  class="btn btn-primary m-3"  (click)="beforeStep('numPagina')"  [disabled]="formularioReactivo1.get('numPagina')?.value === 0" type="submit"> - </button>
+            <input type="text"  placeholder="1" formControlName="numPagina" required>
+            <button  class="btn btn-primary m-3"  (click)="nextStep('numPagina')" [disabled]="" type="submit"> + </button>
+           
+            
+        </div>
+       
     </div>
-    
-    <div>
+</form>
+
+<form (ngSubmit) ="calcularPresupuestoPaginas()" [formGroup]="formularioReactivo1">
+
+    <div class="row" m-3>
+        <div class="col d-flex">
         <label class="form-label" > Número de lenguajes</label>
-        <input type="text" formControlName="nomLenguajes" required>
+        </div>
+        <div class="col d-flex justify-content-start">
+            <button  class="btn btn-primary m-3" type="submit" (click)="beforeStep('numIdioma')" [disabled]="formularioReactivo1.get('numIdioma')?.value === 0" > - </button>
+            <input type="text"  placeholder="1" formControlName="numIdioma" required>
+            <button  class="btn btn-primary m-3" type="submit" (click)="nextStep('numIdioma')" [disabled]=""> + </button>
+        </div>
+       
     </div>
-    <button type="submit"> + </button>
-    <button type="submit"> - </button>
+
+    
 
 </form>
+
+<h3>{{totalcostWeb}}</h3>
+
+
