@@ -42,9 +42,6 @@
       </div>
     </div>
 
-
-
-
     <!--Ads-->
     <div class="card">
       <div class="row card-body">
@@ -53,7 +50,7 @@
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         </div>
         <div id="price" class="col-3">
-          <p> 300 €</p>
+          <p> 400 €</p>
         </div>
         <div class="col-3">
             <label for="opcion2">
@@ -69,7 +66,7 @@
     <div class="card">
       <div class="row card-body">
         <div class="col-6">
-          <h2>Web</h2>
+          <h2>WEB</h2>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         </div>
         <div id="price" class="col-3">
@@ -79,13 +76,15 @@
             <label for="opcion3">
               <input type="checkbox" formControlName="web" id="opcion3">
               Afegir
-              <app-panel></app-panel>
+              @if (formularioEjemplo.get('web')?.value) {
+                <app-panel (mensajeEmitido)="actualizarCosteWeb($event)"></app-panel>
+              }
             </label>
         </div>
       </div>
     </div>
+    <h1 id="totalPresupuesto" class="bolder aling-item-right text-aling-right ">Total presupuesto: {{totalCoste}} €</h1>
 
-    <h1 id="totalPresupuesto" class="bolder">Total coste: {{totalCoste}} €</h1>
   </form>
   
     

@@ -5,9 +5,9 @@ import { Budget } from '../interfaces/budget';
   providedIn: 'root'
 })
 export class BudgetService {
-
+  
   calculoBugdetWeb(numPagina:number, numIdioma:number):number{
-    return numPagina * numIdioma * 30
+    return (numPagina * 30) + (numIdioma * 30)
   }  
 
   constructor() { 
