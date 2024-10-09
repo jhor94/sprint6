@@ -22,71 +22,70 @@
 </div>
 
 
-  <form [formGroup]="formularioEjemplo" action="">
-    <!--SEO-->
-    <div class="card">
-      <div class=" row card-body">
-        <div class="col-6">
-          <h2>SEO</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        </div>
-        <div id="price" class="col-3">
-          <p> 300 €</p>
-        </div>
-        <div class="col-3">
-            <label for="opcion1">
-              <input type="checkbox"  formControlName="seo" id="opcion1">
-              Afegir
-            </label>
-        </div>
+<form [formGroup]="formularioEjemplo" action="">
+  <!--SEO-->
+  <div class="card">
+    <div class=" row card-body">
+      <div class="col-6">
+        <h2> <strong>SEO</strong></h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      </div>
+      <div id="price" class="col-3">
+        <p> 300 €</p>
+      </div>
+      <div class="col-3">
+        <label for="opcion1">
+          <input type="checkbox" formControlName="seo" id="opcion1">
+          Afegir
+        </label>
       </div>
     </div>
+  </div>
 
-    <!--Ads-->
-    <div class="card">
-      <div class="row card-body">
-        <div class="col-6">
-          <h2>ADS</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        </div>
-        <div id="price" class="col-3">
-          <p> 400 €</p>
-        </div>
-        <div class="col-3">
-            <label for="opcion2">
-              <input type="checkbox"  formControlName="ads"  id="opcion2">
-              Afegir
-            </label>
-        </div>
+  <!--Ads-->
+  <div class="card">
+    <div class="row card-body">
+      <div class="col-6">
+        <h2><strong>ADS</strong></h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      </div>
+      <div id="price" class="col-3">
+        <p> 400 €</p>
+      </div>
+      <div class="col-3">
+        <label for="opcion2">
+          <input type="checkbox" formControlName="ads" id="opcion2">
+          Afegir
+        </label>
       </div>
     </div>
+  </div>
 
-    <!--Web-->
+  <!--Web-->
 
-    <div class="card">
-      <div class="row card-body">
-        <div class="col-6">
-          <h2>WEB</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        </div>
-        <div id="price" class="col-3">
-          <p> 500 €</p>
-        </div>
-        <div class="col-3">
-            <label for="opcion3">
-              <input type="checkbox" formControlName="web" id="opcion3">
-              Afegir
-              @if (formularioEjemplo.get('web')?.value) {
-                <app-panel (mensajeEmitido)="actualizarCosteWeb($event)"></app-panel>
-              }
-            </label>
-        </div>
+  <div class="card">
+    <div class="row card-body">
+      <div class="col-6">
+        <h2><strong>WEB</strong></h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
       </div>
+      <div id="price" class="col-3">
+        <p> 500 €</p>
+      </div>
+      <div class="col text-aling-right aling-item-">
+        <label for="opcion3">
+          <input type="checkbox" formControlName="web" id="opcion3">
+          Afegir
+        </label>
+      </div>
+      <div class="col-12 float-start">
+        @if (formularioEjemplo.get('web')?.value) {
+        <app-panel (mensajeEmitido)="actualizarCosteWeb($event)"></app-panel>
+        }
+      </div>
+
     </div>
-    <h1 id="totalPresupuesto" class="bolder aling-item-right text-aling-right ">Total presupuesto: {{totalCoste}} €</h1>
+  </div>
+  <h1 id="totalPresupuesto" class="bolder aling-item-right text-aling-right ">Total presupuesto: {{totalCoste}} €</h1>
 
-  </form>
-  
-    
-
-
+</form>

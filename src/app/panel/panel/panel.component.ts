@@ -2,7 +2,8 @@ import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BudgetService } from '../../services/budget.service';
 import { CommonModule } from '@angular/common';
-import { ModalComponent } from '../../share/modal/modal/modal.component';
+import { ModalComponent } from '../../share/modal/modal.component';
+
 
 @Component({
   selector: 'app-panel',
