@@ -5,3 +5,25 @@
     box-shadow:  4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
 }
+
+.btn-group button {
+    margin-top: 20px auto; /* Ajusta este valor según sea necesario para el espacio */
+    justify-content: center;
+    width: 60%;
+    cursor:  pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+  }
+
+  .btn-group button:hover{
+    text-decoration: underline;
+    color: green;
+  }
+
+#container-presupuesto{
+    margin: 100px auto;
+    width: 80%;
+    justify-content: center;
+}
+

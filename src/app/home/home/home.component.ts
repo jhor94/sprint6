@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PanelComponent } from "../../panel/panel/panel.component";
-import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BudgetsListComponent } from "../../budgets-list/budgets-list/budgets-list.component";
 import { BudgetService } from '../../services/budget.service';
 
@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
 
   numPagina:number = 0
   numIdioma:number = 0
+  fecha:string = new Date().toISOString()
   actualizarNumPaginasIdiomas(valores: {numPagina:number, numIdioma:number}){
     this.numPagina = valores.numPagina;
     this.numIdioma = valores.numIdioma;
@@ -74,6 +75,7 @@ export class HomeComponent implements OnInit {
         total: this.totalCoste,
         numPagina: this.numPagina,
         numIdioma: this.numIdioma,
+        fecha:this.fecha,
     };
     this.budgetService.addBudget(nuevoPresupuesto)
     }
@@ -85,6 +87,6 @@ ngOnInit(): void {
 
 }
 
-title: string = 'Aconsegueix la millor qualitat';
+title: string = 'Consigue la mejor calidad';
 }
 

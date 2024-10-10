@@ -1,16 +1,17 @@
-<div>
-  <nav class="navbar bg-body-tertiary">
+<div class="header">
+  <nav class="navbar custom-navbar">
     <div class="container-fluid">
       <div class="col">
-        <div class="col">
+        <div class="col m-3">
           <img src="assets/usuarios-alt.svg" class="img-fluid float-start" alt="">
         </div>
-        <div class="col">
-          | <a class="navbar-brand" href="#"> Frontender.itacademy </a>
+        <div class="m-3">
+          <a class="" href="#"> Front-End IT Academy </a>
         </div>
       </div>
     </div>
   </nav>
+</div>
 
   <div id="encabezado" class="container-fluid text-center">
     <div class="row justify-content-center">
@@ -19,7 +20,6 @@
       <h1 class="text-center ">{{title}}</h1>
     </div>
   </div>
-</div>
 
 
 <form [formGroup]="formularioEjemplo" action="">
@@ -53,8 +53,8 @@
         <p> 400 €</p>
       </div>
       <div class="col-3">
-        <label for="opcion2">
-          <input type="checkbox" formControlName="ads" id="opcion2">
+        <label class="form-checkbox-label" for="opcion2">
+          <input  class="form-checkbox-input" type="checkbox" formControlName="ads" id="opcion2">
           Afegir
         </label>
       </div>
@@ -81,7 +81,7 @@
       <div class="col-12 float-start">
         @if (formularioEjemplo.get('web')?.value) {
         <app-panel (mensajeEmitido)="actualizarCosteWeb($event)"
-        (mensajePaginasIdiomas)="actualizarNumPaginasIdiomas($event)"></app-panel>
+          (mensajePaginasIdiomas)="actualizarNumPaginasIdiomas($event)"></app-panel>
 
         }
       </div>
@@ -92,27 +92,27 @@
 </form>
 
 <div class="container-fluid">
-    <form  [formGroup]="formularioEjemplo" action="">
-      <div class="card p-3">
-          <h2> <strong>Pedir presupuesto</strong></h2>
-        <div class=" row card-body">
-          <div id="name" class=" col-12 col-md-3">
-            <input placeholder="Nombre" class="form-control w-100" formControlName="nombre" type="text">
-          </div>
-          <div id="telefono" class=" col-12 col-md-3 mb-2">
-            <input class="form-control w-100" formControlName="telefono" placeholder="Teléfono">
-          </div>
-          <div id="email" class="col-12 col-md-3 mb-2">
-            <input class="form-control w-100" formControlName="email" placeholder="Email" type="email">
-          </div>
-          <div id="email" class="col-md-3">
-            <button class="btn btn-primary w-100" (click)="agregarPresupuesto()" type="submit"> Solicitar presupuesto </button>
-          </div>
+  <form [formGroup]="formularioEjemplo" action="">
+    <div class="card p-3">
+      <h2> <strong>Pedir presupuesto</strong></h2>
+      <div class=" row card-body">
+        <div id="name" class=" col-12 col-md-3">
+          <input placeholder="Nombre" class="form-control w-100" formControlName="nombre" type="text">
+        </div>
+        <div id="telefono" class=" col-12 col-md-3 mb-2">
+          <input class="form-control w-100" formControlName="telefono" placeholder="Teléfono">
+        </div>
+        <div id="email" class="col-12 col-md-3 mb-2">
+          <input class="form-control w-100" formControlName="email" placeholder="Email" type="email">
+        </div>
+        <div id="email" class="col-md-3">
+          <button class="btn btn-primary w-100" (click)="agregarPresupuesto()" type="submit"> Solicitar presupuesto
+          </button>
         </div>
       </div>
-    </form>
+    </div>
+  </form>
+</div>
 
-    <app-budgets-list></app-budgets-list>
-  </div>
+<app-budgets-list></app-budgets-list>
 
-  

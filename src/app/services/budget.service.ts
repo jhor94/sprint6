@@ -6,8 +6,6 @@ import { Budget } from '../interfaces/budget';
 })
 export class BudgetService {
 
- 
-  
   calculoBugdetWeb(numPagina:number, numIdioma:number):number{
     return (numPagina * 30) + (numIdioma * 30)
   }  
@@ -15,6 +13,8 @@ export class BudgetService {
   constructor() { 
  
   }
+
+  
 
   private budgetsList = signal<Budget[]>([])
 

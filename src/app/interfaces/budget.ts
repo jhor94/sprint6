@@ -10,4 +10,5 @@ export interface Budget {
     total: number;
     numPagina:number;
     numIdioma:number;
+    fecha:string;
 }

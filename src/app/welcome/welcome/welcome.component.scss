@@ -1,0 +1,48 @@
+
+
+.card{
+    margin: 100px auto;
+    width: 60%;
+    height: 50vh;
+    justify-content: center;
+    box-shadow:  4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-image: url('/assets/vecteezy_business-accounting-concept-businessman-uses-calculator-with_50267889.jpg');
+    background-position: 50%;
+    background-size: cover;
+    background-color:#5befb14b ;
+    background-blend-mode: overlay;  
+}
+
+.container-fluid{
+    justify-content: center;
+    margin: 250px auto;
+    
+}
+
+h1{
+    font-family: 'Arial Narrow', Arial, sans-serif ;
+    font-size: 70px;
+    z-index: 1;
+    color: #e0fbe5;
+    margin-top: 60px;
+    font-weight: bold;
+    
+}
+
+button{
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    background-color: #4CAF50;
+    cursor: pointer;
+    width: 40%;
+    border-color: #4CAF50;
+    transition: background-color 0.3s ease;
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+button:hover{
+    background-color: rgb(95, 95, 95);
+    color: rgb(255, 255, 255);
+}
