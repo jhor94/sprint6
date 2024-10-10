@@ -6,17 +6,7 @@ input{
     font-weight: bold;
     border-color: rgb(196, 196, 196);
 }
-
-.btn-info {
-    width: 30px; /* Ajusta el ancho según necesites */
-    height: 30px; /* Ajusta la altura para que sea igual al ancho */
-    display: flex; /* Usamos flex para centrar el ícono */
-    align-items: center; /* Centra verticalmente el ícono */
-    justify-content: center; /* Centra horizontalmente el ícono */
-    border-radius: 50%; /* Hace que el botón sea circular */
-    padding: 0; /* Elimina el padding por defecto */
+.btn-info{
     background-color: transparent;
-    border-color: rgb(143, 143, 143);
-    border-width: 1px;
-    display: flex;
-  }
+    border-color: white;
+ }

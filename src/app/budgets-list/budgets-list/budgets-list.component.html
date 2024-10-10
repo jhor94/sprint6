@@ -1,0 +1,31 @@
+@for(budget of budgetsList(); track budget.nombre){ <!--para iterar un signal tenemos que poner ()-->
+    <div class="container-fluid">
+        <div class="card">
+            <div class=" row card-body m-3">
+                <div class="col-6">
+                    <h1> <strong>{{ budget.nombre }}</strong></h1>
+                    <p>{{ budget.email }}</p>
+                    <p>telefono: {{budget.telefono}}</p>
+                </div>
+                <div id="price" class="col-3">
+                    <p>Servicios Contratados:</p>
+                    <ul>
+                        @if(budget.servicios.web){
+                            <li> Web ({{budget.numPagina}} páginas, {{budget.numIdioma}} Idiomas)</li> 
+                        }
+                        @if(budget.servicios.ads){
+                            <li> Email</li>
+                        }
+                        @if(budget.servicios.seo){
+                            <li> SEO</li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <p>total:</p>
+                    <h1> <strong>{{ budget.total}}€</strong></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+}

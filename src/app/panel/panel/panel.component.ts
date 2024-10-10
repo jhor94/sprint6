@@ -30,6 +30,7 @@ export class PanelComponent implements OnInit { // creo oninit para inicializar
   }
 
   @Output() mensajeEmitido = new EventEmitter<number>();
+  @Output() mensajePaginasIdiomas = new EventEmitter<{numPagina: number, numIdioma:number}>();
 
   calcularPresupuestoPaginas():void{ // definimos el presupuesto de web a partir de los inputs que nos de el  formulario
     const numPagina = this.formularioReactivo1.get('numPagina')?.value
@@ -37,6 +38,7 @@ export class PanelComponent implements OnInit { // creo oninit para inicializar
     const totalcostWeb = this.budgetService.calculoBugdetWeb(numPagina,numIdioma)
     this.totalCosteWeb = totalcostWeb
     this.mensajeEmitido.emit(this.totalCosteWeb) // emitir el valor del coste de las paginas al padre
+    this.mensajePaginasIdiomas.emit({ numPagina, numIdioma });
 
   }
 

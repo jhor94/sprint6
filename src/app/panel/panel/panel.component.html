@@ -3,15 +3,15 @@
             <div class="row">
                 <div class="col-md-6 d-flex aling-item-center">
                     <label class="form-label"> Número de páginas</label>
-                    <button type="button" class="btn btn-info ms-2" data-bs-toggle="modal"
+                    <button type="submit" class=" btn btn-info ms-2" data-bs-toggle="modal"
                         data-bs-target="#helpModalPagines">
-                        <i class="bi bi-info-circle">i</i>
+                        <i class="bi bi-info-circle"></i>
                     </button>
                 </div>
                 <div class="col-md-6 d-flex justify-content-start  aling-item-center">
                     <button class="btn btn-primary m-3" (click)="beforeStep('numPagina')"
                         [disabled]="formularioReactivo1.get('numPagina')?.value === 0" type="button"> - </button>
-                    <input type="text" placeholder="1" formControlName="numPagina" required>
+                    <input type="text"  class="w-100" placeholder="1" formControlName="numPagina" required>
                     <button class="btn btn-primary m-3" (click)="nextStep('numPagina')" [disabled]="" type="button">
                         +
                     </button>
@@ -23,7 +23,7 @@
                     <label class="form-label"> Número de lenguajes</label>
                     <button type="button" class="btn btn-info ms-2" data-bs-toggle="modal"
                         data-bs-target="#helpModalIdiomes">
-                        <i class="bi bi-info-circle">i</i>
+                        <i class="bi bi-info-circle"></i>
                     </button>
                 </div>
                 <div class="col-auto d-flex justify-content-start aling-item-center">

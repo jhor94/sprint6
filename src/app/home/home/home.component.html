@@ -80,12 +80,39 @@
       </div>
       <div class="col-12 float-start">
         @if (formularioEjemplo.get('web')?.value) {
-        <app-panel (mensajeEmitido)="actualizarCosteWeb($event)"></app-panel>
+        <app-panel (mensajeEmitido)="actualizarCosteWeb($event)"
+        (mensajePaginasIdiomas)="actualizarNumPaginasIdiomas($event)"></app-panel>
+
         }
       </div>
 
     </div>
   </div>
   <h1 id="totalPresupuesto" class="bolder aling-item-right text-aling-right ">Total presupuesto: {{totalCoste}} €</h1>
-
 </form>
+
+<div class="container-fluid">
+    <form  [formGroup]="formularioEjemplo" action="">
+      <div class="card p-3">
+          <h2> <strong>Pedir presupuesto</strong></h2>
+        <div class=" row card-body">
+          <div id="name" class=" col-12 col-md-3">
+            <input placeholder="Nombre" class="form-control w-100" formControlName="nombre" type="text">
+          </div>
+          <div id="telefono" class=" col-12 col-md-3 mb-2">
+            <input class="form-control w-100" formControlName="telefono" placeholder="Teléfono">
+          </div>
+          <div id="email" class="col-12 col-md-3 mb-2">
+            <input class="form-control w-100" formControlName="email" placeholder="Email" type="email">
+          </div>
+          <div id="email" class="col-md-3">
+            <button class="btn btn-primary w-100" (click)="agregarPresupuesto()" type="submit"> Solicitar presupuesto </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <app-budgets-list></app-budgets-list>
+  </div>
+
+  
