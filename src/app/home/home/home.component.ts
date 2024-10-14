@@ -3,7 +3,8 @@ import { PanelComponent } from "../../panel/panel/panel.component";
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BudgetsListComponent } from "../../budgets-list/budgets-list/budgets-list.component";
 import { BudgetService } from '../../services/budget.service';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { Budget } from '../../interfaces/budget';
 
 
 
@@ -21,7 +22,11 @@ export class HomeComponent implements OnInit {
   mensajeDesdeHija: number = 0
   totalCosteWeb: number = 0
 
-  constructor(private form: FormBuilder, private budgetService: BudgetService) {
+  numPagina:number = 0
+  numIdioma:number = 0
+  fecha:string = new Date().toISOString()
+
+  constructor(private form: FormBuilder, private budgetService: BudgetService, private route: ActivatedRoute, private router: Router) {
     this.formularioEjemplo = this.form.group({
       seo: [false,],
       ads: [false,],
@@ -34,17 +39,46 @@ export class HomeComponent implements OnInit {
 
     this.formularioEjemplo.valueChanges.subscribe(values => {
       this.recalcularCosteltotal(values)
+      this.UpdateUrl()
 
     });
 
   }
 
-  numPagina:number = 0
-  numIdioma:number = 0
-  fecha:string = new Date().toISOString()
+  UpdateUrl(){
+
+    const queryParams: any = {}
+
+    if(this.formularioEjemplo.get('seo')?.value){
+        queryParams.seo = true
+      }
+    if(this.formularioEjemplo.get('ads')?.value){
+      queryParams.ads = true
+    }
+    if(this.formularioEjemplo.get('web')?.value){
+      queryParams.web = true
+    }
+    
+    if(this.numPagina > 0){
+      queryParams.pagina = this.numPagina
+    }
+    if(this.numIdioma > 0){
+      queryParams.idioma = this.numIdioma
+    }
+
+    if(Object.keys(queryParams).length > 0){
+      this.router.navigate([], {
+        queryParams: queryParams,
+        queryParamsHandling: 'merge' 
+      });
+    }
+
+  }
+
   actualizarNumPaginasIdiomas(valores: {numPagina:number, numIdioma:number}){
     this.numPagina = valores.numPagina;
     this.numIdioma = valores.numIdioma;
+    this.UpdateUrl();
 
   }
   actualizarCosteWeb(coste: number) {
@@ -77,13 +111,24 @@ export class HomeComponent implements OnInit {
         numIdioma: this.numIdioma,
         fecha:this.fecha,
     };
+
     this.budgetService.addBudget(nuevoPresupuesto)
     }
-    
+
   }
 
 
 ngOnInit(): void {
+
+  this.route.queryParams.subscribe(params => {
+    this.formularioEjemplo.patchValue({
+      seo: params['seo'] === 'true',
+      ads: params['ads'] === 'true',
+      web: params['web'] === 'true',
+      numPagina: params ['numPagina'] || '',
+      numIdioma: params ['numIdioma']|| '',
+    });
+  });
 
 }
 

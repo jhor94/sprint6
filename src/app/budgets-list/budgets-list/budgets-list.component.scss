@@ -19,11 +19,18 @@
   .btn-group button:hover{
     text-decoration: underline;
     color: green;
+    display: flexbox;
+
   }
 
 #container-presupuesto{
     margin: 100px auto;
     width: 80%;
     justify-content: center;
+}
+
+form{
+  width: 30%;
+  justify-content: center;
 }
 

@@ -1,12 +1,22 @@
 input{
-    max-width: 80px ;
-    border-radius: 40%;
-    margin: 5px;
     text-align: center;
     font-weight: bold;
     border-color: rgb(196, 196, 196);
+    margin: 10px;
 }
 .btn-info{
     background-color: transparent;
     border-color: white;
  }
+
+ #botones{
+    font-size: 15px;
+    background-color: #4CAF50;
+    text-align: center;
+    border-color: #4CAF50;
+}
+
+.container{
+    text-align: end;
+    justify-content: end;
+}
