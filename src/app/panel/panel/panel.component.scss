@@ -2,7 +2,8 @@ input{
     text-align: center;
     font-weight: bold;
     border-color: rgb(196, 196, 196);
-    margin: 10px;
+    border-style: solid;
+    border-radius: 10px;
 }
 .btn-info{
     background-color: transparent;
@@ -14,6 +15,7 @@ input{
     background-color: #4CAF50;
     text-align: center;
     border-color: #4CAF50;
+    margin: auto;
 }
 
 .container{

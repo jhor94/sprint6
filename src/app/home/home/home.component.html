@@ -78,18 +78,13 @@
           Afegir
         </label>
       </div>
-
-        <div class="col-12">
+      
           @if (formularioEjemplo.get('web')?.value) {
-          <div class="col-12 d-flex justify-content-end">
+          <div class="col-md-12 d-flex justify-content-end">
             <app-panel (mensajeEmitido)="actualizarCosteWeb($event)"
               (mensajePaginasIdiomas)="actualizarNumPaginasIdiomas($event)"></app-panel>
           </div>
           }
-        </div>
-
-      
-
     </div>
   </div>
   <h1 id="totalPresupuesto" class="bolder aling-item-right text-aling-right ">Total presupuesto: {{totalCoste}} €</h1>
@@ -101,13 +96,30 @@
       <h2> <strong>Pedir presupuesto</strong></h2>
       <div class=" row card-body">
         <div id="name" class=" col-12 col-md-3">
-          <input placeholder="Nombre" class="form-control w-100" formControlName="nombre" type="text">
+          <input placeholder="Nombre" class="form-control w-100" formControlName="nombre" id="validationCustom03" type="text"
+          [ngClass]="{'is-invalid': formularioEjemplo.controls['nombre'].hasError('required') && (formularioEjemplo.get('nombre')?.touched || formularioEjemplo.get('nombre')?.dirty)}">
+          @if(formularioEjemplo.controls['nombre'].hasError('required') && (formularioEjemplo.get('nombre')?.touched || formularioEjemplo.get('nombre')?.dirty)){
+            <div class="text-danger">
+              <small class="text-danger">El campo nombre es obligatorio</small>
+            </div>    
+          }
         </div>
         <div id="telefono" class=" col-12 col-md-3 mb-2">
-          <input class="form-control w-100" formControlName="telefono" placeholder="Teléfono">
+          <input class="form-control w-100" formControlName="telefono" placeholder="Teléfono"
+          [ngClass]="{'is-invalid': formularioEjemplo.controls['telefono'].hasError('required') && (formularioEjemplo.get('telefono')?.touched || formularioEjemplo.get('telefono')?.dirty)}">
+          @if(formularioEjemplo.controls['telefono'].hasError('required')&& (formularioEjemplo.get('telefono')?.touched || formularioEjemplo.get('telefono')?.dirty)){
+              <small class="text-danger">El campo telefono es obligatorio</small>
+          }
         </div>
         <div id="email" class="col-12 col-md-3 mb-2">
-          <input class="form-control w-100" formControlName="email" placeholder="Email" type="email">
+          <input class="form-control w-100" formControlName="email" placeholder="Email" type="email"
+          [ngClass]="{'is-invalid': formularioEjemplo.controls['email'].hasError('required') && (formularioEjemplo.get('email')?.touched || formularioEjemplo.get('email')?.dirty)}">
+          @if(formularioEjemplo.controls['email'].hasError('required')&& (formularioEjemplo.get('email')?.touched || formularioEjemplo.get('email')?.dirty)){
+              <small class="text-danger">El campo email es obligatorio</small>
+          }
+          @if(formularioEjemplo.controls['email'].hasError('email')){
+            <small class="text-danger">El campo email debe ser un email válido</small>
+          }
         </div>
         <div id="email" class="col-md-3">
           <button class="btn btn-primary w-100" (click)="agregarPresupuesto()" type="submit"> Solicitar presupuesto
@@ -119,3 +131,13 @@
 </div>
 
 <app-budgets-list></app-budgets-list>
+
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-center">Copyright 2024</p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { PanelComponent } from "../../panel/panel/panel.component";
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BudgetsListComponent } from "../../budgets-list/budgets-list/budgets-list.component";
 import { BudgetService } from '../../services/budget.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Budget } from '../../interfaces/budget';
+import { CommonModule } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [PanelComponent, ReactiveFormsModule, BudgetsListComponent],
+  imports: [PanelComponent, ReactiveFormsModule, BudgetsListComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -33,7 +34,7 @@ export class HomeComponent implements OnInit {
       web: [false,],
       nombre: new FormControl('', [Validators.required]),
       telefono: new FormControl('',[Validators.required]),
-      email: new FormControl('', [Validators.email]),
+      email: new FormControl('', [Validators.required, Validators.email]),
   
     })
 

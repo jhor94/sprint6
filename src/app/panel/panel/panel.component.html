@@ -1,43 +1,34 @@
 <form class="formulario" (ngSubmit)="calcularPresupuestoPaginas()" [formGroup]="formularioReactivo1">
-    <div class="row text-center aling-item-center">
-        <div class="col-12 col-md-12 d-flex justify-content-end">
-            <div class="">
+    <div class="row d-flex justify-content-end ">
+            <div class="col-md-12 justify-content-end">
                 <label class="form-label"> Número de páginas</label>
                 <button type="submit" class=" btn btn-info" data-bs-toggle="modal" data-bs-target="#helpModalPagines">
                     <i class="bi bi-info-circle"></i>
                 </button>
                 <button id="botones" class="btn btn-primary" (click)="beforeStep('numPagina')"
                     [disabled]="formularioReactivo1.get('numPagina')?.value === 0" type="button"> - </button>
-                <input type="text" placeholder="1" formControlName="numPagina" required>
+                <input type="text" formControlName="numPagina" required>
                 <button id="botones" class="btn btn-primary m-3" (click)="nextStep('numPagina')" [disabled]=""
                     type="button">+
                 </button>
             </div>
-        </div>
-
-        <div class="col-12 col-md-12 d-flex justify-content-end">
-            <div class="">
+       
+            <div class="col-md-12 justify-content-end">
                 <label class="form-label"> Número de lenguajes</label>
-                <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                    data-bs-target="#helpModalIdiomes">
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#helpModalIdiomes">
                     <i class="bi bi-info-circle"></i>
                 </button>
                 <button id="botones" class="btn btn-primary" type="submit" (click)="beforeStep('numIdioma')"
                     [disabled]="formularioReactivo1.get('numIdioma')?.value === 0"> - </button>
-                <input type="text" placeholder="1" formControlName="numIdioma" required>
+                <input type="text" formControlName="numIdioma" required>
                 <button id="botones" class="btn btn-primary" type="submit" (click)="nextStep('numIdioma')"
-                    [disabled]="">
-                    +
+                    [disabled]="">+
                 </button>
             </div>
-        </div>
-        
-       
-
-            
         
     </div>
 </form>
+
 <div class="text-end m-5">
     <h3>{{totalCosteWeb}}€</h3>
 </div>
