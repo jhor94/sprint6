@@ -56,6 +56,9 @@
         <label class="form-checkbox-label" for="opcion2">
           <input class="form-checkbox-input" type="checkbox" formControlName="ads" id="opcion2">
           Afegir
+          @if(formularioEjemplo.controls['seo'].hasError('required')){
+            <small class="text-danger">Este campo es obligatorio</small>
+          }
         </label>
       </div>
     </div>
@@ -86,9 +89,21 @@
           </div>
           }
     </div>
+   
+  </div>  
+  @if(mostrarErrorcheckbox){
+    <div class="text-danger text-center">
+      <small>Debes seleccionar al menos un servicio.</small>
+    </div>
+  }
+  <div class="mt-3">
+    <h1 id="totalPresupuesto" class="bolder aling-item-right text-aling-right ">Total presupuesto: {{totalCoste}} €</h1>
   </div>
-  <h1 id="totalPresupuesto" class="bolder aling-item-right text-aling-right ">Total presupuesto: {{totalCoste}} €</h1>
+  
 </form>
+
+
+
 
 <div class="container-fluid">
   <form [formGroup]="formularioEjemplo" action="">

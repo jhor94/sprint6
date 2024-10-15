@@ -1,11 +1,12 @@
 import { Component, OnInit} from '@angular/core';
 import { PanelComponent } from "../../panel/panel/panel.component";
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { BudgetsListComponent } from "../../budgets-list/budgets-list/budgets-list.component";
 import { BudgetService } from '../../services/budget.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Budget } from '../../interfaces/budget';
 import { CommonModule } from '@angular/common';
+
 
 
 
@@ -26,12 +27,14 @@ export class HomeComponent implements OnInit {
   numPagina:number = 0
   numIdioma:number = 0
   fecha:string = new Date().toISOString()
+  mostrarErrorcheckbox: boolean = false
+
 
   constructor(private form: FormBuilder, private budgetService: BudgetService, private route: ActivatedRoute, private router: Router) {
     this.formularioEjemplo = this.form.group({
-      seo: [false,],
-      ads: [false,],
-      web: [false,],
+      seo: [false,[Validators.required]],
+      ads: [false,[Validators.required]],
+      web: [false,[Validators.required]],
       nombre: new FormControl('', [Validators.required]),
       telefono: new FormControl('',[Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -97,6 +100,18 @@ export class HomeComponent implements OnInit {
   }
 
   agregarPresupuesto() {
+    const seo =this.formularioEjemplo.get('seo')?.value
+    const ads = this.formularioEjemplo.get('ads')?.value
+    const web = this.formularioEjemplo.get('web')?.value
+
+    if (!seo && !ads && !web) {
+      this.mostrarErrorcheckbox = true;
+      return;
+    }
+    this.mostrarErrorcheckbox = false;
+      
+    
+    
     if(this.formularioEjemplo.valid){
       const nuevoPresupuesto = {
         servicios: {
