@@ -23,9 +23,13 @@
 
   }
 
+form input{
+  width: 100%;
+}
+
 #container-presupuesto{
-    margin: 100px auto;
-    width: 80%;
+    margin: 20px 10px;
+    width: 100%;
     justify-content: center;
 }
 
@@ -34,3 +38,6 @@ form{
   justify-content: center;
 }
 
+@media (max-width:500px) {
+  
+}

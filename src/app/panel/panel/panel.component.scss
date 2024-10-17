@@ -1,9 +1,27 @@
+form{
+    display: flex;
+    justify-content: end;
+}
+
+.pagina{
+    margin: 10px;
+}
+
+idioma{
+    margin: 10px;
+}
+
+.panel{
+    margin-bottom: 10px;
+}
+
 input{
     text-align: center;
     font-weight: bold;
     border-color: rgb(196, 196, 196);
     border-style: solid;
     border-radius: 10px;
+    width: 50px;
 }
 .btn-info{
     background-color: transparent;
@@ -11,14 +29,62 @@ input{
  }
 
  #botones{
-    font-size: 15px;
+    font-size: 14px;
     background-color: #4CAF50;
-    text-align: center;
     border-color: #4CAF50;
-    margin: auto;
+    margin: 0 10px;
 }
 
-.container{
-    text-align: end;
-    justify-content: end;
+@media (max-width:800px) {
+    
+    #pagina{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    #idioma{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .bi-info-circle{
+        display: flex;
+        padding-left: 15px;
+    }
+
+}
+
+@media (max-width:500px) {
+    .container-fluid{
+        padding: 0 10px;
+    }
+    
+    #pagina{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+    }
+    #idioma{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #pagina label, #idioma label{
+        margin-top: 10px;
+    }
+    #pagina input, #idioma input{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .formulario button, .formulario input{
+        margin: 10px;
+    }
+    
+
 }

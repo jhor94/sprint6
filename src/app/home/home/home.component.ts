@@ -110,7 +110,10 @@ export class HomeComponent implements OnInit {
     }
     this.mostrarErrorcheckbox = false;
       
-    
+    if(this.formularioEjemplo.invalid){
+      this.formularioEjemplo.markAllAsTouched();
+      return
+    }
     
     if(this.formularioEjemplo.valid){
       const nuevoPresupuesto = {

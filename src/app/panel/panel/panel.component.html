@@ -1,31 +1,30 @@
 <form class="formulario" (ngSubmit)="calcularPresupuestoPaginas()" [formGroup]="formularioReactivo1">
-    <div class="row d-flex justify-content-end ">
-            <div class="col-md-12 justify-content-end">
-                <label class="form-label"> Número de páginas</label>
-                <button type="submit" class=" btn btn-info" data-bs-toggle="modal" data-bs-target="#helpModalPagines">
-                    <i class="bi bi-info-circle"></i>
+    <div class="container-fluid mt-2">
+            <div id="pagina" class="col-md-12 mb-3">
+                <button type="submit" class=" btn btn-info ms-2" data-bs-toggle="modal" data-bs-target="#helpModalPagines">
+                    <i class="bi bi-info-circle me-2"></i>
                 </button>
+                <label class="form-label">Número de páginas</label>
                 <button id="botones" class="btn btn-primary" (click)="beforeStep('numPagina')"
                     [disabled]="formularioReactivo1.get('numPagina')?.value === 0" type="button"> - </button>
                 <input type="text" formControlName="numPagina" required>
-                <button id="botones" class="btn btn-primary m-3" (click)="nextStep('numPagina')" [disabled]=""
+                <button id="botones" class="btn btn-primary" (click)="nextStep('numPagina')" [disabled]=""
                     type="button">+
                 </button>
             </div>
        
-            <div class="col-md-12 justify-content-end">
-                <label class="form-label"> Número de lenguajes</label>
-                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#helpModalIdiomes">
+            <div  id="idioma" class="col-md-12  mb-3">
+                <button type="button" class="btn btn-info ms-3" data-bs-toggle="modal" data-bs-target="#helpModalIdiomes">
                     <i class="bi bi-info-circle"></i>
                 </button>
+                <label class="form-label">Número de Idiomas</label>
                 <button id="botones" class="btn btn-primary" type="submit" (click)="beforeStep('numIdioma')"
                     [disabled]="formularioReactivo1.get('numIdioma')?.value === 0"> - </button>
-                <input type="text" formControlName="numIdioma" required>
+                <input type="text" formControlName="numIdioma" class="ms-1"required>
                 <button id="botones" class="btn btn-primary" type="submit" (click)="nextStep('numIdioma')"
                     [disabled]="">+
                 </button>
-            </div>
-        
+            </div>  
     </div>
 </form>
 

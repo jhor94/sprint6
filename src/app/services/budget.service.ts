@@ -14,8 +14,6 @@ export class BudgetService {
  
   }
 
-  
-
   private budgetsList = signal<Budget[]>([])
 
   addBudget(budget:Budget){

@@ -19,15 +19,15 @@ export class BudgetsListComponent  implements OnInit{
  budgets = inject(BudgetService)
 formularioBuscar:FormGroup
 
- constructor(private form:FormBuilder) {// se crea el formulario reactivo con los dos inputs (num paginas y num idioma)
+ constructor(private form:FormBuilder) {
   this.formularioBuscar = this.form.group({
-    buscar: new FormControl("", [] ), // aqui se valida el formulario con los requsitios que quieras
+    buscar: new FormControl("", [] ), 
  })
 }
 
 
 ngOnInit(): void {
-  this.budgetsList.set(this.budgets.getBudget()); // muestro las variables del array budget dentro de html budget list
+  this.budgetsList.set(this.budgets.getBudget()); 
   this.filterBudgetList.set(this.budgetsList());
 }
 

@@ -96,3 +96,12 @@ footer{
     font-weight: bold;
     color: white;
 }
+
+@media (max-width:500px) {
+    #price{
+        font-size: 30px;
+    }
+    #totalPresupuesto{
+        font-size: 30px;
+    }
+}
