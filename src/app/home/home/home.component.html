@@ -31,7 +31,7 @@
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
       </div>
       <div id="price" class="col-6 col-md-4 text-md-center">
-        <p> 300 €</p>
+        <h1 class="d-flex">300 €</h1>
       </div>
       <div class="col-6 col-md-2 text-md-start">
         <label for="opcion1">
@@ -44,13 +44,13 @@
 
   <!--Ads-->
   <div class="card">
-    <div class="row card-body">
+    <div class="row d-flex card-body">
       <div class="col-12 col-md-6">
         <h2><strong>ADS</strong></h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
       </div>
       <div id="price" class="col-6 col-md-4 text-md-center">
-        <p> 400 €</p>
+        <h1 class="d-flex">400 €</h1>
       </div>
       <div class="col-6 col-md-2 text-md-start">
         <label class="form-checkbox-label" for="opcion2">
@@ -66,27 +66,24 @@
 
   <!--Web-->
 
-  <div class="card">
-    <div class="row card-body">
+  <div class="card d-flex">
+    <div class="row card-body d-flex">
       <div class="col-12 col-md-6">
         <h2><strong>WEB</strong></h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
       </div>
-      <div id="price" class="col-6 col-md-4 text-md-center">
-        <p> 500 €</p>
+      <div  id="price" class="col-6 col-md-4">
+        <h1 class="d-flex"> 500 €</h1>
       </div>
-      <div class="col-6 col-md-2 text-md-start">
+      <div class="col-6 col-md-2">
         <label for="opcion3">
           <input type="checkbox" formControlName="web" id="opcion3">
           Afegir
         </label>
       </div>
-      
           @if (formularioEjemplo.get('web')?.value) {
-          <div class="col-md-12 d-flex justify-content-end">
             <app-panel (mensajeEmitido)="actualizarCosteWeb($event)"
               (mensajePaginasIdiomas)="actualizarNumPaginasIdiomas($event)"></app-panel>
-          </div>
           }
     </div>
    
