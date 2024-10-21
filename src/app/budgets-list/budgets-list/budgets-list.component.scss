@@ -1,3 +1,7 @@
+.container{
+  width: 70%;
+  margin: 20px auto;
+}
 .card{
     margin: 100px auto;
     width: 60%;
@@ -5,8 +9,7 @@
     box-shadow:  4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
 }
-
-.btn-group button {
+.btn {
     margin-top: 20px auto; /* Ajusta este valor según sea necesario para el espacio */
     justify-content: center;
     width: 60%;
@@ -14,30 +17,30 @@
     font-weight: bold;
     text-decoration: none;
     transition: text-decoration 0.3s ease;
+    color:rgb(38, 38, 38)
   }
 
-  .btn-group button:hover{
+ .btn:hover {
     text-decoration: underline;
     color: green;
     display: flexbox;
 
   }
 
-form input{
+.input-group{
+  width: 100%;
+  display: flex;
+}
+.input-group-append button {
   width: 100%;
 }
 
-#container-presupuesto{
-    margin: 20px 10px;
-    width: 100%;
-    justify-content: center;
-}
 
 form{
-  width: 30%;
   justify-content: center;
+  margin: 2px auto;
 }
 
-@media (max-width:500px) {
-  
-}
+
+
+
