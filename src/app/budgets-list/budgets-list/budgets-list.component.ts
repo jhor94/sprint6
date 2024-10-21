@@ -35,7 +35,7 @@ ngOnInit(): void {
 
 orderByDate(){
   const orderDate = [...this.filterBudgetList()].sort((a,b)=>{
-    return new Date(a.fecha).getTime()- new Date(b.fecha).getTime();
+    return new Date(b.fecha).getTime()- new Date(a.fecha).getTime();
   });
   this.filterBudgetList.set(orderDate)
 }

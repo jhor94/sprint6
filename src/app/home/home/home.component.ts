@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
 
   numPagina:number = 0
   numIdioma:number = 0
-  fecha:string = new Date().toISOString()
   mostrarErrorcheckbox: boolean = false
 
 
@@ -128,7 +127,7 @@ export class HomeComponent implements OnInit {
         total: this.totalCoste,
         numPagina: this.numPagina,
         numIdioma: this.numIdioma,
-        fecha:this.fecha,
+        fecha: new Date().toISOString()
     };
 
     this.budgetService.addBudget(nuevoPresupuesto)
